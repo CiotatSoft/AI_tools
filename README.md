@@ -73,6 +73,13 @@ sudo apt-get install -y nvidia-container-toolkit
 sudo nvidia-ctk runtime configure --runtime=docker
 ```
 
+### Get an AI model
+Let's get qwen2, an excellent models for coding tasks
+```bash
+ollama run qwen2.5-coder:32b
+```
+we get the 32b version because its size is 18GB. 
+
 
 ### Run ollama + OpenWebUI on the same machine
 * should be available on http://localhost:3000
@@ -81,6 +88,8 @@ sudo nvidia-ctk runtime configure --runtime=docker
 docker run  --network=host --gpus all-v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:cuda`
 ``` 
 The first user is admin.
+
+
 -----------------
 ### if suspend or resume makes AI failing:
 in some cases, when the PC has been in suspend/resume, the GPUs cannot be used anymore (ollama will run with CPU info, which is way more slower) so you will have to run this command manually
