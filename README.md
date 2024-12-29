@@ -85,7 +85,7 @@ we get the 32b version because its size is 18GB.
 * should be available on http://localhost:3000
 * uses NVIDIA first, and when not enough graphic memory available, it will use system memory and switch to CPUs 
 ```bash
-docker run  --network=host --gpus all-v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:cuda`
+docker run  --network=host --gpus all -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:cuda`
 ``` 
 The first user is admin.
 
